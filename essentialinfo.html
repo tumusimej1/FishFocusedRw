@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/style.css">
+    <title>Fishing Locations | Fishfocused</title>
+    <style>
+        /* Import Fonts */
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap");
+
+        @font-face {
+            font-family: AstroSpace;
+            src: url(/fonts/AstroSpace.ttf);
+        }
+
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #2d3a4a; /* Dark blue-gray for text */
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #2a6f7c; /* Deep teal for header */
+            position: fixed;
+            width: 100%;
+            z-index: 99;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .main-nav {
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: "AstroSpace", sans-serif;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navlinks {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .navlinks li {
+            margin: 0 20px;
+        }
+
+        .navlinks li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .navlinks li a:hover {
+            color: #a8d5e2; /* Light blue for hover */
+            padding-bottom: 7px;
+            border-bottom: 2px solid #a8d5e2;
+        }
+
+        li a.contact {
+            background-color: #1a4a53; /* Darker teal for contact button */
+            padding: 9px 20px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        li a.contact:hover {
+            background-color: #a8d5e2; /* Light blue on hover */
+            color: #1a4a53; /* Darker teal text on hover */
+        }
+
+        .menu-btn {
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+            display: none;
+        }
+
+        #isChecked {
+            display: none;
+        }
+
+        /* Responsive Header */
+        @media (max-width: 800px) {
+            .menu-btn {
+                display: block;
+            }
+
+            .navlinks {
+                position: fixed;
+                top: 90px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: #1a4a53; /* Darker teal for mobile menu */
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                transition: all 0.5s;
+            }
+
+            .navlinks li {
+                margin: 20px 0;
+            }
+
+            .navlinks li a {
+                font-size: 20px;
+            }
+
+            #isChecked:checked ~ .navlinks {
+                right: 0;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .logo {
+                font-size: 25px;
+            }
+
+            .menu-btn {
+                font-size: 25px;
+            }
+        }
+
+        /* Container for Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 5rem;
+        }
+
+        /* Locations Section */
+        .locations {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1a4367;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: #1a4367;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .locations-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-top: 1rem;
+        }
+
+        .timeline {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            padding-left: 2rem;
+            border-left: 3px solid #1a4367;
+        }
+
+        .location-marker {
+            position: absolute;
+            left: -2.5rem;
+            width: 2rem;
+            height: 2rem;
+            background: #1a4367;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .map-container {
+            flex: 1;
+            min-width: 500px;
+            height: 90vh;
+            border-radius: 8px;
+            background: #1a436793;
+            position: relative;
+        }
+
+        /* Fishing Regulations Section */
+        .fishing-regulations {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            margin: 2rem auto;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .fishing-regulations h1 {
+            color: #2a6f7c;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .fishing-regulations h2 {
+            color: #2a6f7c;
+            font-size: 1.8rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            animation: slideIn 1.2s ease-in-out;
+        }
+
+        .fishing-regulations p {
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .fishing-regulations ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        .fishing-regulations ul li {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .fishing-regulations .btn {
+            display: inline-block;
+            background-color: #2a6f7c;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .fishing-regulations .btn:hover {
+            background-color: #1e4f5a;
+        }
+
+        /* Iframe Styling */
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+              
+/* Contact Info Section */
+.contact-info {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.contact-info h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #07575a;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-card {
+  background-color: #f4f4f9;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideInUp 0.8s ease-in-out;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card .icon {
+  font-size: 2rem;
+  color: #047e85;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover .icon {
+  transform: scale(1.2);
+}
+
+.contact-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #07575a;
+}
+
+.contact-card p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #163536;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+          <input type="checkbox" id="isChecked" />
+          <label for="isChecked" class="menu-btn">
+            <i class="fas fa-bars"></i>
+          </label>
+          <a href="index.html" class="logo">Fishfocused.rw</a>
+          <ul class="navlinks">
+              <li><a href="index.html">Home</a></li>
+            <li><a href="essentialinfo.html">Full info</a></li>
+            <li><a href="tutorials.html">Tutorials</a></li>
+            <li><a href="Types.html">Types & Market guide</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html" class="contact">Contact</a></li>
+            
+          </ul>
+        </nav>
+      </header>
+    <br>
+    <br>
+    <br>
+
+    <section class="locations">
+        <h2 class="section-title">Popular Fishing Locations</h2>
+        <div class="locations-container">
+            <div class="timeline">
+                <div style="margin-bottom: 3rem;">
+                    <div class="location-marker">1</div>
+                    <h3>Lake Kivu</h3>
+                    <p>Western Province<br>
+                        Best for: Tilapia, Sardines<br>
+                        Depth: Up to 480m<br>
+                        Permits: Required (5,000 RWF/day)</p>
+                </div>
+                <div style="margin-bottom: 3rem;">
+                    <div class="location-marker">2</div>
+                    <h3>Lake Muhazi</h3>
+                    <p>Eastern Province<br>
+                        Best for: Catfish, Tilapia<br>
+                        Depth: Up to 40m<br>
+                        Permits: Required (3,000 RWF/day)</p>
+                </div>
+                <div>
+                    <div class="location-marker">3</div>
+                    <h3>Nyabarongo River</h3>
+                    <p>Central Rwanda<br>
+                        Best for: Catfish<br>
+                        Access: Multiple points<br>
+                        Permits: Required (2,000 RWF/day)</p>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15949.71561229286!2d29.3258!3d-2.0042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMDAnMTUuMSJTIDI5wrAxOSczMi44IkU!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <div class="fishing-regulations">
+        <h1>Fishing Regulations & Guidelines in Rwanda</h1>
+        <h2>Fishing Laws in Rwanda</h2>
+        <p>
+            Fishing in Rwanda is regulated to ensure sustainable practices and protect aquatic ecosystems. The following laws apply:
+        </p>
+        <ul>
+            <li>All fishermen must obtain a valid fishing permit from the Rwanda Agriculture and Animal Resources Development Board (RAB).</li>
+            <li>Fishing is prohibited in protected areas and during breeding seasons.</li>
+            <li>Use of illegal fishing methods (e.g., explosives, poison) is strictly prohibited.</li>
+        </ul>
+        <h2>Fishing Permits</h2>
+        <p>
+            To fish legally in Rwanda, you must acquire a fishing permit. Here’s how:
+        </p>
+        <ul>
+            <li>Visit the nearest RAB office or apply online through their official website.</li>
+            <li>Provide identification and pay the required fee.</li>
+            <li>Permits are valid for one year and must be renewed annually.</li>
+        </ul>
+        <h2>Sustainability Guidelines</h2>
+        <p>
+            Rwanda promotes sustainable fishing practices to protect its water bodies. Key guidelines include:
+        </p>
+        <ul>
+            <li>Use of approved fishing gear to minimize environmental impact.</li>
+            <li>Respect for catch limits to prevent overfishing.</li>
+            <li>Reporting illegal fishing activities to authorities.</li>
+        </ul>
+        <a href="https://www.rab.gov.rw" class="btn" target="_blank">Learn More</a>
+    </div>
+
+
+
+    
+
+<!-- Footer Section -->
+<div class="contact-info">
+    <h2>Contact Us</h2>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <h3>Address</h3>
+        <p> Kigali, Rwanda</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <h3>Phone</h3>
+        <p>(+1) 978-210-1055</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3>Email</h3>
+        <p>Email: info@stempower.org</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Market Guide. All rights reserved.</p>
+  </footer>
+  
+  <!-- Font Awesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
+        
+  
+</body>
+</html>
