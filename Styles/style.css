@@ -164,7 +164,7 @@ li a.contact:hover {
 .discover {
   height: 600px;
   width: 100%;
-  background-image: url(/images/bg.jpg);
+  background-image: url(./images/bg.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
