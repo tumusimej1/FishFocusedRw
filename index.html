@@ -1,368 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | Fishfocused </title>
-    <link rel="stylesheet" href="Styles/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-    <style>
-      
-/* Contact Info Section */
-.contact-info {
-  background-color: #ffffff;
-  padding: 40px 20px;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  max-width: 1200px;
-  width: 90%;
-}
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Fishfocused </title>
+  <link rel="stylesheet" href="Styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-.contact-info h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #07575a;
-  animation: fadeIn 1s ease-in-out;
-}
+  <style>
+    /* Contact Info Section */
+    .contact-info {
+      background-color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      max-width: 1200px;
+      width: 90%;
+    }
 
-.contact-cards {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+    .contact-info h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #07575a;
+      animation: fadeIn 1s ease-in-out;
+    }
 
-.contact-card {
-  background-color: #f4f4f9;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 20px;
-  width: 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: slideInUp 0.8s ease-in-out;
-}
+    .contact-cards {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-.contact-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
+    .contact-card {
+      background-color: #f4f4f9;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: slideInUp 0.8s ease-in-out;
+    }
 
-.contact-card .icon {
-  font-size: 2rem;
-  color: #047e85;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
-}
+    .contact-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
 
-.contact-card:hover .icon {
-  transform: scale(1.2);
-}
+    .contact-card .icon {
+      font-size: 2rem;
+      color: #047e85;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
 
-.contact-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #07575a;
-}
+    .contact-card:hover .icon {
+      transform: scale(1.2);
+    }
 
-.contact-card p {
-  font-size: 1rem;
-  color: #555;
-  margin: 0;
-}
+    .contact-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #07575a;
+    }
 
-/* Footer Styles */
-footer {
-  background-color: #163536;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  width: 100%;
-  position: relative;
-  bottom: 0;
-  margin-top: 40px;
-}
+    .contact-card p {
+      font-size: 1rem;
+      color: #555;
+      margin: 0;
+    }
 
-footer p {
-  margin: 0;
-  font-size: 1rem;
-}
+    /* Footer Styles */
+    footer {
+      background-color: #163536;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+      position: relative;
+      bottom: 0;
+      margin-top: 40px;
+    }
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+    footer p {
+      margin: 0;
+      font-size: 1rem;
+    }
 
-@keyframes slideInUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contact-cards {
-    flex-direction: column;
-    align-items: center;
-  }
+      to {
+        opacity: 1;
+      }
+    }
 
-  .contact-card {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-.View{
-  height: 40px;
-  width: 100px ;
-  border: 1.2px solid #2a6f7c;
-  border-radius: 10px;
-  color: #2a6f7c;
-  background-color: white;
-  cursor: pointer;
-}
-.View:hover{
-  height: 40px;
-  width: 100px ;
-  border: 1.2px solid #2a6f7c;
-  border-radius: 10px;
-  background-color: #2a6f7c;
-  color: white;
-  cursor: pointer;
-  transition: 0.50s;
-}  
-    </style>
-  </head>
-  <body>
-    <header>
-      <nav class="main-nav">
-        <input type="checkbox" id="isChecked" />
-        <label for="isChecked" class="menu-btn">
-          <i class="fas fa-bars"></i>
-        </label>
-        <a href="index.html" class="logo">Fishfocused.rw</a>
-        <ul class="navlinks">
-            <li><a href="index.html">Home</a></li>
-          <li><a href="essentialinfo.html">Full info</a></li>
-          <li><a href="tutorials.html">Tutorials</a></li>
-          <li><a href="Types.html">Types & Market guide</a></li>
-          <li><a href="about.html">About us</a></li>
-          <li><a href="contact.html" class="contact">Contact</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <div class="discover">
-      <div class="bimg">
-        <div class="content">
-          <h1>Discover the Art of Fishing in Rwanda</h1>
-          <p>Learn techniques, explore fish species, and master fishing skills.</p>
-          <p>Your ultimate guide to the best fishing experiences in Rwanda.</p>
-          <br>
-          <a href="about.html"><button class="explore" >Explore more</button></a>
-        </div>
+    @keyframes slideInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .contact-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-card {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    .View {
+      height: 40px;
+      width: 100px;
+      border: 1.2px solid #2a6f7c;
+      border-radius: 10px;
+      color: #2a6f7c;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    .View:hover {
+      height: 40px;
+      width: 100px;
+      border: 1.2px solid #2a6f7c;
+      border-radius: 10px;
+      background-color: #2a6f7c;
+      color: white;
+      cursor: pointer;
+      transition: 0.50s;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="main-nav">
+      <label for="isChecked"></label>
+      <input type="checkbox" id="isChecked" />
+      <label for="isChecked" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <a href="index.html" class="logo">Fishfocused.rw</a>
+      <ul class="navlinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="essentialinfo.html">Full info</a></li>
+        <li><a href="tutorials.html">Tutorials</a></li>
+        <li><a href="Types.html">Types & Market guide</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html" class="contact">Contact</a></li>
+
+      </ul>
+    </nav>
+  </header>
+  <div class="discover">
+    <div class="bimg">
+      <div class="content">
+        <h1>Discover the Art of Fishing in Rwanda</h1>
+        <p>Learn techniques, explore fish species, and master fishing skills.</p>
+        <p>Your ultimate guide to the best fishing experiences in Rwanda.</p>
+        <br>
+        <a href="about.html"><button class="explore">Explore more</button></a>
       </div>
     </div>
-    
+  </div>
 
-    <div  id="about" class="about-us" >
-  <div class="text-section">
-    <h2 >About Us</h2>
-    <p >
-      We are passionate fishing enthusiasts dedicated to
-       promoting sustainable fishing practices in Rwanda. 
-       Our team consists of experienced local anglers who 
-       know the best spots and techniques for successful fishing
-        in the region. Founded in 2020, we've helped thousands of beginners start 
+
+  <div id="about" class="about-us">
+    <div class="text-section">
+      <h2>About Us</h2>
+      <p>
+        We are passionate fishing enthusiasts dedicated to
+        promoting sustainable fishing practices in Rwanda.
+        Our team consists of experienced local anglers who
+        know the best spots and techniques for successful fishing
+        in the region. Founded in 2020, we've helped thousands of beginners start
         their fishing journey and supported experienced anglers in improving their skills.
-    </p>
-  </div>
-  <div class="image-section">
-    <img src="images/im1.jpg" alt="Fishing experience in Rwanda">
-  </div>
-</div>
-
-<br>
-<br>
-
-
-<center>
-<h1 style="color: #047e85;">Fishing images Gallery</h1>
-</center>    
-    <div class="gallery" id="gallery">
-        <div class="gallery-item">
-            <img src="images/im2.jpeg" alt="Fishing on Lake Kivu" width="200" height="200"/>
-        </div>
-        <div class="gallery-item">
-            <img src="images/im16.jpeg " alt="Sport Fishing in Akagera" />
-        </div>
-        <div class="gallery-item">
-            <img src="images/im19.jpeg" alt="Fishing Boats on Lake Kivu" />
-        </div>
-        
+      </p>
     </div>
+    <div class="image-section">
+      <img src="images/im1.jpg" alt="Fishing experience in Rwanda">
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+
+  <center>
+    <h1 style="color: #047e85;">Fishing images Gallery</h1>
+  </center>
+  <div class="gallery" id="gallery">
+    <div class="gallery-item">
+      <img src="images/im2.jpeg" alt="Fishing on Lake Kivu" width="200" height="200" />
+    </div>
+    <div class="gallery-item">
+      <img src="images/im16.jpeg " alt="Sport Fishing in Akagera" />
+    </div>
+    <div class="gallery-item">
+      <img src="images/im19.jpeg" alt="Fishing Boats on Lake Kivu" />
+    </div>
+
+  </div>
 
   <br>
   <center>
     <a href="gallery.html"><button class="View">View more</button></a>
-  </center> 
+  </center>
 
-    <div class="container1">
-      <h1 style="text-align: center;
+  <div class="container1">
+    <h1 style="text-align: center;
       color: #333;
       padding: 20px;
       background: #163536;
       color: white;
       margin: 0;">Local Fish Species</h1>
-      <table>
-          <thead>
-              <tr>
-                  <th>Image</th>
-                  <th>Species</th>
-                  <th>Peak Season</th>
-                  <th>Size</th>
-                  <th>Preferred Habitat</th>
-                  <th>Best Bait</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td><img src="images/im8.jpeg"  style="border-radius:100%;" alt="Nile Tilapia" class="species-image"></td>
-                  <td>Nile Tilapia</td>
-                  <td>June - September</td>
-                  <td>1-3 kg</td>
-                  <td>Lake Muhazi, Lake Kivu</td>
-                  <td>Worms, corn, bread</td>
-              </tr>
-              <tr>
-                  <td><img src="images/im9.jpg"  style="border-radius:100%;" alt="African Catfish" class="species-image"></td>
-                  <td>African Catfish</td>
-                  <td>March - May</td>
-                  <td>5-15 kg</td>
-                  <td>Lake Muhazi, Nyabarongo River</td>
-                  <td>Chicken liver, earthworms</td>
-              </tr>
-              <tr>
-                  <td><img src="images/im10.jpeg"  style="border-radius:100%;" alt="Lake Tanganyika Sardine" class="species-image"></td>
-                  <td>Lake Tanganyika Sardine (Isambaza)</td>
-                  <td>Year-round</td>
-                  <td>0.1-0.2 kg</td>
-                  <td>Lake Kivu</td>
-                  <td>Small nets, light fishing</td>
-              </tr>
-          </tbody>
-      </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Species</th>
+          <th>Peak Season</th>
+          <th>Size</th>
+          <th>Preferred Habitat</th>
+          <th>Best Bait</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="images/im8.jpeg" style="border-radius:100%;" alt="Nile Tilapia" class="species-image"></td>
+          <td>Nile Tilapia</td>
+          <td>June - September</td>
+          <td>1-3 kg</td>
+          <td>Lake Muhazi, Lake Kivu</td>
+          <td>Worms, corn, bread</td>
+        </tr>
+        <tr>
+          <td><img src="images/im9.jpg" style="border-radius:100%;" alt="African Catfish" class="species-image"></td>
+          <td>African Catfish</td>
+          <td>March - May</td>
+          <td>5-15 kg</td>
+          <td>Lake Muhazi, Nyabarongo River</td>
+          <td>Chicken liver, earthworms</td>
+        </tr>
+        <tr>
+          <td><img src="images/im10.jpeg" style="border-radius:100%;" alt="Lake Tanganyika Sardine"
+              class="species-image"></td>
+          <td>Lake Tanganyika Sardine (Isambaza)</td>
+          <td>Year-round</td>
+          <td>0.1-0.2 kg</td>
+          <td>Lake Kivu</td>
+          <td>Small nets, light fishing</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-<br>
-<br>
+  <br>
+  <br>
 
 
 
-<div class="container">
-  <h1>Market Guide</h1>
+  <div class="container">
+    <h1>Market Guide</h1>
 
-  <div class="section">
+    <div class="section">
       <h2>Live Price Tracker</h2>
       <div class="price-tracker">
-          <div class="card">
-              <h3>Tilapia (per kg)</h3>
-              <p>2,000-3,000 RWF</p>
-          </div>
-          <div class="card">
-              <h3>Catfish (per kg)</h3>
-              <p>3,000-4,000 RWF</p>
-          </div>
-          <div class="card">
-              <h3>Sardines (per kg)</h3>
-              <p>1,500-2,500 RWF</p>
-          </div>
+        <div class="card">
+          <h3>Tilapia (per kg)</h3>
+          <p>2,000-3,000 RWF</p>
+        </div>
+        <div class="card">
+          <h3>Catfish (per kg)</h3>
+          <p>3,000-4,000 RWF</p>
+        </div>
+        <div class="card">
+          <h3>Sardines (per kg)</h3>
+          <p>1,500-2,500 RWF</p>
+        </div>
       </div>
-  </div>
+    </div>
 
-  <div class="section">
+    <div class="section">
       <h2>Market Schedule</h2>
       <div class="market-schedule">
-          <div class="card">
-              <h3>Kimironko Market</h3>
-              <p><strong>Open daily:</strong> 6:00 AM - 6:00 PM</p>
-              <p><strong>Best hours:</strong> 6:00 AM - 9:00 AM</p>
-              <p><strong>Location:</strong> Kimironko, Kigali</p>
-          </div>
-          <div class="card">
-              <h3>Nyabugogo Market</h3>
-              <p><strong>Open daily:</strong> 7:00 AM - 5:00 PM</p>
-              <p><strong>Best hours:</strong> 7:00 AM - 10:00 AM</p>
-              <p><strong>Location:</strong> Nyabugogo, Kigali</p>
-          </div>
+        <div class="card">
+          <h3>Kimironko Market</h3>
+          <p><strong>Open daily:</strong> 6:00 AM - 6:00 PM</p>
+          <p><strong>Best hours:</strong> 6:00 AM - 9:00 AM</p>
+          <p><strong>Location:</strong> Kimironko, Kigali</p>
+        </div>
+        <div class="card">
+          <h3>Nyabugogo Market</h3>
+          <p><strong>Open daily:</strong> 7:00 AM - 5:00 PM</p>
+          <p><strong>Best hours:</strong> 7:00 AM - 10:00 AM</p>
+          <p><strong>Location:</strong> Nyabugogo, Kigali</p>
+        </div>
       </div>
-  </div>
+    </div>
 
-  <div class="section">
+    <div class="section">
       <h2>Buying Tips</h2>
       <ul class="tips">
-          <li>Check for clear, bright eyes and red gills</li>
-          <li>Press the flesh - should be firm and spring back</li>
-          <li>Best prices early morning</li>
-          <li>Negotiate prices for bulk purchases</li>
+        <li>Check for clear, bright eyes and red gills</li>
+        <li>Press the flesh - should be firm and spring back</li>
+        <li>Best prices early morning</li>
+        <li>Negotiate prices for bulk purchases</li>
       </ul>
-  </div>
-</div>
-
-
-
-
-<!-- Footer Section -->
-<div class="contact-info">
-  <h2>Contact Us</h2>
-  <div class="contact-cards">
-    <div class="contact-card">
-      <div class="icon">
-        <i class="fas fa-map-marker-alt"></i>
-      </div>
-      <h3>Address</h3>
-      <p> Kigali, Rwanda</p>
-    </div>
-    <div class="contact-card">
-      <div class="icon">
-        <i class="fas fa-phone-alt"></i>
-      </div>
-      <h3>Phone</h3>
-      <p>(+1) 978-210-1055</p>
-    </div>
-    <div class="contact-card">
-      <div class="icon">
-        <i class="fas fa-envelope"></i>
-      </div>
-      <h3>Email</h3>
-      <p>Email: info@stempower.org</p>
     </div>
   </div>
-</div>
-<footer>
-  <p>&copy; 2025 Market Guide. All rights reserved.</p>
-</footer>
-
-<!-- Font Awesome for Icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-      
 
 
-  </body>
+
+
+  <!-- Footer Section -->
+  <div class="contact-info">
+    <h2>Contact Us</h2>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <h3>Address</h3>
+        <p> Kigali, Rwanda</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <h3>Phone</h3>
+        <p>(+1) 978-210-1055</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3>Email</h3>
+        <p>Email: info@stempower.org</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Market Guide. All rights reserved.</p>
+  </footer>
+
+  <!-- Font Awesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+
+</body>
+
 </html>

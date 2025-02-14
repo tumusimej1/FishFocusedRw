@@ -15,14 +15,17 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: #f0f4f8; /* Light blue-gray background */
-  color: #2d3a4a; /* Dark blue-gray for text */
+  background-color: #f0f4f8;
+  /* Light blue-gray background */
+  color: #2d3a4a;
+  /* Dark blue-gray for text */
   line-height: 1.6;
 }
 
 /* Header */
 header {
-  background-color: #2a6f7c; /* Deep teal for header */
+  background-color: #2a6f7c;
+  /* Deep teal for header */
   position: fixed;
   width: 100%;
   z-index: 99;
@@ -35,6 +38,7 @@ header {
     transform: translateY(-100%);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -61,8 +65,9 @@ header {
 @keyframes fadeIn {
   from {
     opacity: 0;
-  transform: translateY(-20px);
+    transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -90,21 +95,25 @@ header {
 }
 
 .navlinks li a:hover {
-  color: #a8d5e2; /* Light blue for hover */
+  color: #a8d5e2;
+  /* Light blue for hover */
   padding-bottom: 7px;
   border-bottom: 2px solid #a8d5e2;
 }
 
 li a.contact {
-  background-color: #1a4a53; /* Darker teal for contact button */
+  background-color: #1a4a53;
+  /* Darker teal for contact button */
   padding: 9px 20px;
   border-radius: 50px;
   transition: all 0.3s ease;
 }
 
 li a.contact:hover {
-  background-color: #a8d5e2; /* Light blue on hover */
-  color: #1a4a53; /* Darker teal text on hover */
+  background-color: #a8d5e2;
+  /* Light blue on hover */
+  color: #1a4a53;
+  /* Darker teal text on hover */
 }
 
 .menu-btn {
@@ -130,7 +139,8 @@ li a.contact:hover {
     right: -100%;
     width: 100%;
     height: calc(100vh - 90px);
-    background: #1a4a53; /* Darker teal for mobile menu */
+    background: #1a4a53;
+    /* Darker teal for mobile menu */
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -145,7 +155,7 @@ li a.contact:hover {
     font-size: 20px;
   }
 
-  #isChecked:checked ~ .navlinks {
+  #isChecked:checked~.navlinks {
     right: 0;
   }
 }
@@ -164,7 +174,7 @@ li a.contact:hover {
 .discover {
   height: 600px;
   width: 100%;
-  background-image: url(./images/bg.jpg);
+  background-image: url(/Styles/Images/bg.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -178,7 +188,8 @@ li a.contact:hover {
 .bimg {
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent overlay */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -195,6 +206,7 @@ li a.contact:hover {
     transform: translateY(50px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -218,7 +230,8 @@ li a.contact:hover {
 .explore {
   height: 80px;
   width: 200px;
-  background-color: #2a6f7c; /* Deep teal for button */
+  background-color: #2a6f7c;
+  /* Deep teal for button */
   color: white;
   border: none;
   font-size: 20px;
@@ -229,7 +242,8 @@ li a.contact:hover {
 }
 
 .explore:hover {
-  background-color: #1a4a53; /* Darker teal on hover */
+  background-color: #1a4a53;
+  /* Darker teal on hover */
   transform: scale(1.05);
 }
 
@@ -250,13 +264,15 @@ li a.contact:hover {
 .text-section {
   flex: 1;
   padding: 20px;
-  color: #2d3a4a; /* Dark blue-gray for text */
+  color: #2d3a4a;
+  /* Dark blue-gray for text */
 }
 
 .text-section h2 {
   font-size: 2em;
   margin-bottom: 15px;
-  color: #2a6f7c; /* Deep teal for heading */
+  color: #2a6f7c;
+  /* Deep teal for heading */
 }
 
 .text-section p {
@@ -345,7 +361,8 @@ li a.contact:hover {
 
 /* Footer Section */
 footer {
-  background-color: #1a4a53; /* Darker teal for footer */
+  background-color: #1a4a53;
+  /* Darker teal for footer */
   color: white;
   padding: 20px 0;
   text-align: center;
@@ -380,7 +397,8 @@ footer {
 }
 
 .social-icon:hover {
-  color: #a8d5e2; /* Light blue on hover */
+  color: #a8d5e2;
+  /* Light blue on hover */
 }
 
 
@@ -415,7 +433,8 @@ thead {
   color: white;
 }
 
-th, td {
+th,
+td {
   padding: 14px 16px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -461,7 +480,8 @@ tr:hover {
     white-space: nowrap;
   }
 
-  th, td {
+  th,
+  td {
     text-align: left;
     white-space: nowrap;
   }
@@ -481,23 +501,11 @@ tr:hover {
   background: #07575a;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 
-
-
-
-
-
-/* Container Styles */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #07575a;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow
 }
+
+
+
 
 .container:hover {
   transform: translateY(-5px);
@@ -527,7 +535,8 @@ h1 {
 }
 
 /* Card Styles */
-.price-tracker, .market-schedule {
+.price-tracker,
+.market-schedule {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -585,7 +594,9 @@ h1 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .price-tracker, .market-schedule {
+
+  .price-tracker,
+  .market-schedule {
     flex-direction: column;
   }
 
@@ -599,6 +610,7 @@ h1 {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -609,6 +621,7 @@ h1 {
     transform: translateX(-20px);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -624,7 +637,8 @@ h1 {
 
 
 footer {
-  background-color: #1e4f5a; /* Dark teal background */
+  background-color: #1e4f5a;
+  /* Dark teal background */
   padding: 40px 20px;
   text-align: center;
   position: relative;
@@ -640,7 +654,7 @@ footer::before {
   width: 100%;
   height: 100%;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><text x="50%" y="50%" font-size="20" fill="rgba(255,255,255,0.1)" text-anchor="middle" dominant-baseline="middle">KP</text></svg>'),
-                  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><text x="50%" y="50%" font-size="20" fill="rgba(255,255,255,0.1)" text-anchor="middle" dominant-baseline="middle">STEM</text></svg>');
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><text x="50%" y="50%" font-size="20" fill="rgba(255,255,255,0.1)" text-anchor="middle" dominant-baseline="middle">STEM</text></svg>');
   background-repeat: repeat;
   opacity: 0.2;
   z-index: 1;
@@ -679,7 +693,8 @@ footer::before {
 }
 
 .social-icons a:hover {
-  color: #a8d5e2; /* Light blue on hover */
+  color: #a8d5e2;
+  /* Light blue on hover */
 }
 
 /* Footer Links */
@@ -707,12 +722,8 @@ footer::before {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.View{
+.View {
   height: 40px;
-  width: 300px ;
+  width: 300px;
   border: 1px solid;
 }
-
-
-
-
